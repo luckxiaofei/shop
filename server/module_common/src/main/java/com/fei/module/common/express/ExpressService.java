@@ -1,11 +1,11 @@
 package com.fei.common.express;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fei.common_until.HttpUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.fei.common.express.config.ExpressProperties;
 import com.fei.common.express.dao.ExpressInfo;
-import com.fei.common.util.HttpUtil;
 import org.springframework.util.Base64Utils;
 
 import java.net.URLEncoder;

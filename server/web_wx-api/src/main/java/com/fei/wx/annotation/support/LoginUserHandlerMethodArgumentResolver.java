@@ -1,7 +1,7 @@
 package com.fei.wx.annotation.support;
 
+import com.fei.common_until.UserTokenManager;
 import com.fei.wx.annotation.LoginUser;
-import com.fei.wx.service.UserTokenManager;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;

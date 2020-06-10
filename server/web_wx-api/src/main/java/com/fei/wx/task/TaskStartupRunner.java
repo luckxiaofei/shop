@@ -1,15 +1,10 @@
 package com.fei.wx.task;
 
-import com.fei.common.system.SystemConfig;
-import com.fei.common.task.TaskService;
+import com.fei.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.List;
 
 @Component
 public class TaskStartupRunner implements ApplicationRunner {

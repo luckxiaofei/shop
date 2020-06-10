@@ -1,5 +1,6 @@
 package com.fei.common.system;
 
+import com.fei.common_until.SystemConfig;
 import com.fei.common_until.SystemInfoPrinter;
 import com.google.common.collect.Maps;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,27 +35,27 @@ class SystemInistService {
 
     static {
         // 小程序相关配置默认值
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_WX_INDEX_NEW, "6");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_WX_INDEX_HOT, "6");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_WX_INDEX_BRAND, "4");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_WX_INDEX_TOPIC, "4");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_WX_INDEX_CATLOG_LIST, "4");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_WX_INDEX_CATLOG_GOODS, "4");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_WX_SHARE, "false");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_NEW, "6");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_HOT, "6");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_BRAND, "4");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_TOPIC, "4");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_CATLOG_LIST, "4");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_INDEX_CATLOG_GOODS, "4");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_WX_SHARE, "false");
         // 运费相关配置默认值
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_EXPRESS_FREIGHT_VALUE, "8");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_EXPRESS_FREIGHT_MIN, "88");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_EXPRESS_FREIGHT_VALUE, "8");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_EXPRESS_FREIGHT_MIN, "88");
         // 订单相关配置默认值
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_ORDER_UNPAID, "30");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_ORDER_UNCONFIRM, "7");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_ORDER_COMMENT, "7");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_ORDER_UNPAID, "30");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_ORDER_UNCONFIRM, "7");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_ORDER_COMMENT, "7");
         // 商城相关配置默认值
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_MALL_NAME, "litemall");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_MALL_ADDRESS, "上海");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_MALL_Latitude, "31.201900");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_MALL_LONGITUDE, "121.587839");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_MALL_PHONE, "021-xxxx-xxxx");
-        DEFAULT_CONFIGS.put(com.fei.common.system.SystemConfig.LITEMALL_MALL_QQ, "705144434");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_MALL_NAME, "litemall");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_MALL_ADDRESS, "上海");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_MALL_Latitude, "31.201900");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_MALL_LONGITUDE, "121.587839");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_MALL_PHONE, "021-xxxx-xxxx");
+        DEFAULT_CONFIGS.put(SystemConfig.LITEMALL_MALL_QQ, "705144434");
     }
 
 //    @Autowired
@@ -75,7 +76,7 @@ class SystemInistService {
 //            litemallSystemConfigService.addConfig(entry.getKey(), entry.getValue());
         }
 
-        com.fei.common.system.SystemConfig.setConfigs(configs);
+        SystemConfig.setConfigs(configs);
     }
 
     private Map<String, String> getSystemInfo() {
@@ -111,11 +112,11 @@ class SystemInistService {
 
         //测试获取System表配置信息
         infos.put(SystemInfoPrinter.CREATE_PART_COPPER + 3, "系统设置");
-        infos.put("自动创建朋友圈分享图", Boolean.toString(com.fei.common.system.SystemConfig.isAutoCreateShareImage()));
-        infos.put("商场名称", com.fei.common.system.SystemConfig.getMallName());
+        infos.put("自动创建朋友圈分享图", Boolean.toString(SystemConfig.isAutoCreateShareImage()));
+        infos.put("商场名称", SystemConfig.getMallName());
         infos.put("首页显示记录数：NEW,HOT,BRAND,TOPIC,CatlogList,CatlogMore",
-                com.fei.common.system.SystemConfig.getNewLimit() + "," + com.fei.common.system.SystemConfig.getHotLimit() + "," + com.fei.common.system.SystemConfig.getBrandLimit() +
-                        "," + com.fei.common.system.SystemConfig.getTopicLimit() + "," + com.fei.common.system.SystemConfig.getCatlogListLimit() + "," + com.fei.common.system.SystemConfig.getCatlogMoreLimit());
+                SystemConfig.getNewLimit() + "," + SystemConfig.getHotLimit() + "," + SystemConfig.getBrandLimit() +
+                        "," + SystemConfig.getTopicLimit() + "," + SystemConfig.getCatlogListLimit() + "," + SystemConfig.getCatlogMoreLimit());
 
         return infos;
     }

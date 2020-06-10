@@ -1,5 +1,6 @@
 package com.fei.common.util.bcrypt;
 
+import com.fei.common_until.bcrypt.BCrypt;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;

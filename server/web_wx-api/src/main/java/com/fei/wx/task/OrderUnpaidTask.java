@@ -1,10 +1,10 @@
 package com.fei.wx.task;
 
+import com.fei.common_until.SystemConfig;
+import com.fei.entities.Task;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.fei.common.system.SystemConfig;
-import com.fei.common.task.Task;
-import com.fei.common.util.BeanUtil;
+import com.fei.common_until.BeanUtil;
 
 import java.time.LocalDateTime;
 import java.util.List;

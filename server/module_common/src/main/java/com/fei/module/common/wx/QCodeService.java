@@ -3,7 +3,7 @@ package com.fei.module.common.wx;
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import com.fei.entities.po.SysStorage;
 import com.fei.common.storage.StorageService;
-import com.fei.common.system.SystemConfig;
+import com.fei.common_until.SystemConfig;
 import me.chanjar.weixin.common.error.WxErrorException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
