@@ -18,22 +18,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.fei</groupId>
-            <artifactId>common</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>commons-lang</artifactId>
-                    <groupId>commons-lang</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fei</groupId>
-            <artifactId>db</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.github.binarywang</groupId>
             <artifactId>weixin-java-pay</artifactId>
             <exclusions>
