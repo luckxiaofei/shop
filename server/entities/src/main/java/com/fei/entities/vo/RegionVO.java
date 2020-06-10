@@ -1,14 +1,14 @@
-package com.fei.admin.vo;
+package com.fei.entities.vo;
 
 import java.util.List;
 
-public class RegionVo {
+public class RegionVO {
     private Integer id;
     private String name;
     private Byte type;
     private Integer code;
 
-    private List<RegionVo> children;
+    private List<RegionVO> children;
 
     public Integer getId() {
         return id;
@@ -18,7 +18,7 @@ public class RegionVo {
         this.id = id;
     }
 
-    public List<RegionVo> getChildren() {
+    public List<RegionVO> getChildren() {
         return children;
     }
 
@@ -46,7 +46,7 @@ public class RegionVo {
         this.code = code;
     }
 
-    public void setChildren(List<RegionVo> children) {
+    public void setChildren(List<RegionVO> children) {
         this.children = children;
     }
 }

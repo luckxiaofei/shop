@@ -1,8 +1,8 @@
-package com.fei.admin.vo;
+package com.fei.entities.vo;
 
 import java.util.List;
 
-public class CategoryVo {
+public class CategoryVO {
     private Integer id;
     private String name;
     private String keywords;
@@ -10,13 +10,13 @@ public class CategoryVo {
     private String iconUrl;
     private String picUrl;
     private String level;
-    private List<CategoryVo> children;
+    private List<CategoryVO> children;
 
-    public List<CategoryVo> getChildren() {
+    public List<CategoryVO> getChildren() {
         return children;
     }
 
-    public void setChildren(List<CategoryVo> children) {
+    public void setChildren(List<CategoryVO> children) {
         this.children = children;
     }
 

@@ -17,6 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <maven.test.skip>true</maven.test.skip>
+        <spring.boot.version>1.3.2</spring.boot.version>
     </properties>
 
     <modules>
@@ -32,32 +33,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.fei</groupId>
-                <artifactId>common</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fei</groupId>
-                <artifactId>db</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fei</groupId>
-                <artifactId>wx-api</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fei</groupId>
-                <artifactId>admin-api</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fei</groupId>
-                <artifactId>all</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
             <!-- Spring Boot Mybatis 依赖 -->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
@@ -90,19 +65,7 @@
                 <version>6.1.0.Final</version>
             </dependency>
 
-            <!-- MySQL 连接驱动依赖 -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.46</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>1.1.10</version>
-            </dependency>
-
+            <!--            weixin -->
             <dependency>
                 <groupId>com.github.binarywang</groupId>
                 <artifactId>weixin-java-pay</artifactId>
