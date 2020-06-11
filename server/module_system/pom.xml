@@ -23,6 +23,11 @@
             <version>0.1.0</version>
             <scope>compile</scope>
         </dependency>
+        <!-- Dubbo Spring Boot Starter -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
 
     </dependencies>
 
