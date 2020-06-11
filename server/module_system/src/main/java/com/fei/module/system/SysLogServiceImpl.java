@@ -4,7 +4,7 @@ import com.fei.db.mapper.SysLogMapper;
 import com.fei.entities.po.SysLog;
 import com.fei.service.SysLogService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.Service;
 
 @Service
 public class SysLogServiceImpl implements SysLogService {

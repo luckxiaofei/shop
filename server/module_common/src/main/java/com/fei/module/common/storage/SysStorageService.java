@@ -4,7 +4,7 @@ import com.fei.db.mapper.SysStorageMapper;
 import com.fei.entities.po.SysStorage;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
 

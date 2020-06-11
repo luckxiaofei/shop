@@ -3,7 +3,7 @@ package com.fei.common;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.Service;
 
 @Service
 public class AsyncTask {

@@ -1,6 +1,6 @@
 package com.fei.wx.service;
 
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.Service;
 
 @Service
 public class UserInfoService {

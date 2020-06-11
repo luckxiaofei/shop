@@ -8,7 +8,7 @@ import com.fei.entities.vo.SysAdminVO;
 import com.fei.service.SysAdminUserService;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.Service;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.ArrayList;

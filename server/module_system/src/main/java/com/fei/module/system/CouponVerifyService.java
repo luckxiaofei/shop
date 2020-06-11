@@ -1,6 +1,6 @@
 package com.fei.module.system;
 
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.Service;
 
 @Service
 public class CouponVerifyService {
