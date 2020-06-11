@@ -1,8 +1,8 @@
-package com.fei.admin.vo;
+package com.fei.entities.vo;
 
 import java.util.List;
 
-public class CatVo {
+public class CatVO {
     private Integer value = null;
     private String label = null;
     private List children = null;

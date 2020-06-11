@@ -1,12 +1,12 @@
-package com.fei.admin.vo;
+package com.fei.entities.vo;
 
 import java.util.List;
 
-public class PermVo {
+public class PermVO {
     private String id;
     private String label;
     private String api;
-    private List<PermVo> children;
+    private List<PermVO> children;
 
     public String getId() {
         return id;
@@ -32,11 +32,11 @@ public class PermVo {
         return api;
     }
 
-    public List<PermVo> getChildren() {
+    public List<PermVO> getChildren() {
         return children;
     }
 
-    public void setChildren(List<PermVo> children) {
+    public void setChildren(List<PermVO> children) {
         this.children = children;
     }
 

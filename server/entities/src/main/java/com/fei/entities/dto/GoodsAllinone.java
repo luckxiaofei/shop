@@ -1,4 +1,4 @@
-package com.fei.admin.dto;
+package com.fei.entities.dto;
 
 public class GoodsAllinone {
 //    LitemallGoods goods;

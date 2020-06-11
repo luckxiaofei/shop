@@ -1,4 +1,4 @@
-package com.fei.admin.util;
+package com.fei.entities;
 
 public class AdminResponseCode {
     public static final Integer ADMIN_INVALID_NAME = 601;

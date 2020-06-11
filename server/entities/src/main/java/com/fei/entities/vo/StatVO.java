@@ -1,11 +1,11 @@
-package com.fei.admin.vo;
+package com.fei.entities.vo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class StatVo {
+public class StatVO {
     private String[] columns = new String[0];
     private List<Map> rows = new ArrayList<>();
 
