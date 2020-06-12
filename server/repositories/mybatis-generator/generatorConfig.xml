@@ -41,7 +41,7 @@
 
         <!-- 生成实体类的包名和位置 ，targetPackage指的是包名,targetProject值得是路径位置-->
         <!-- 对于生成的pojo所在包,pojo其实就是domain Entity-->
-        <javaModelGenerator targetPackage="com.fei.db.entity.po" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.fei.shop.entity.po" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -50,7 +50,7 @@
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
 
         <!-- 配置mapper对应的java映射  也可以叫dao层 -->
-        <javaClientGenerator targetPackage="com.fei.db.dao" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.fei.shop.dao" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
         <!-- table可以有多个,每个数据库中的表都可以写一个table，tableName表示要匹配的数据库表,也可以在tableName属性中通过使用%通配符来匹配所有数据库表,只有匹配的表才会自动生成文件 -->

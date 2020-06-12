@@ -2,23 +2,23 @@ spring:
   profiles:
     active: db
 
+server:
+  port: ${random.int[8080,9000]}
+
 dubbo:
+  protocol:
+    port: ${random.int[20880,20980]}
+    name: dubbo
   application:
     name: module_system
     qosEnable: false
   scan:
-    basePackages: com.fei.module
+    basePackages: com.fei.shop
   registry:
     id: module_system_registry
     address: nacos://47.115.124.84:8848
 
-#      dubbo.application.name=dubbo-demo-server
-#      # Base packages to scan Dubbo Component: @com.alibaba.dubbo.config.annotation.Service
-#      dubbo.scan.basePackages=com.example
-#      ## RegistryConfig Bean
-#      #dubbo.registry.id=my-registry
-#      dubbo.registry.id=${test}
-#      #dubbo.registry.address=zookeeper://localhost:2181?client=curator
-#      dubbo.registry.address=nacos://47.115.124.84:8848
-#      dubbo.config-center.address=nacos://47.115.124.84:8848
-#      dubbo.application.qosEnable=false
+
+
+
+

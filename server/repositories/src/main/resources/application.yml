@@ -9,4 +9,4 @@ logging:
     root:  DEBUG
     org.springframework:  DEBUG
     org.mybatis:  info
-    com.fei.db:  info
+    com.fei.shop:  info

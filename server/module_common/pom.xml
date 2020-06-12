@@ -116,11 +116,20 @@
             <version>0.1.0</version>
             <scope>compile</scope>
         </dependency>
+        <!-- Dubbo Spring Boot Starter -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo</artifactId>
-            <version>2.7.3</version>
-            <scope>compile</scope>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
+        <!--     nacos   -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-registry-nacos</artifactId>
+        </dependency>
+        <!-- Keep latest Nacos client version -->
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
         </dependency>
     </dependencies>
 

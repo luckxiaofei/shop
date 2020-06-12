@@ -1,6 +1,6 @@
 package com.fei.common.storage;
 
-import com.fei.db.mapper.SysStorageMapper;
+import com.fei.shop.mapper.SysStorageMapper;
 import com.fei.entities.po.SysStorage;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;

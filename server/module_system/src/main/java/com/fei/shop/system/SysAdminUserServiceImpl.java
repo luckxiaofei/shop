@@ -1,8 +1,8 @@
 package com.fei.shop.system;
 
-import com.fei.db.mapper.SysAdminMapper;
-import com.fei.db.mapper.SysAdminRoleMapper;
-import com.fei.db.mapper.SysRoleMapper;
+import com.fei.shop.mapper.SysAdminMapper;
+import com.fei.shop.mapper.SysAdminRoleMapper;
+import com.fei.shop.mapper.SysRoleMapper;
 import com.fei.entities.po.SysAdminRole;
 import com.fei.entities.vo.SysAdminVO;
 import com.fei.service.SysAdminUserService;

@@ -1,10 +1,11 @@
-package com.fei;
+package com.fei.shop;
 
+import com.fei.service.SysAdminUserService;
 import org.apache.dubbo.common.json.JSON;
 import org.apache.dubbo.common.logger.Logger;
 import org.apache.dubbo.common.logger.LoggerFactory;
+import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
-import org.apache.dubbo.config.spring.context.annotation.EnableDubboConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,22 +15,23 @@ import tk.mybatis.spring.annotation.MapperScan;
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 
-//@SpringBootApplication(scanBasePackages = {"com.fei.db", "com.fei.common", "com.fei.wx"})
-//@MapperScan("com.fei.db.dao")
+//@SpringBootApplication(scanBasePackages = {"com.fei.shop", "com.fei.common", "com.fei.wx"})
+//@MapperScan("com.fei.shop.dao")
 //@EnableTransactionManagement
 //@EnableScheduling
 @EnableDubbo
-@EnableDubboConfig
-@MapperScan("com.fei.db.mapper")
+@MapperScan("com.fei.shop.mapper")
 @SpringBootApplication
-public class SystemApplication {
-    private static Logger logger = LoggerFactory.getLogger(SystemApplication.class);
+public class CommonApplication {
+    private static Logger logger = LoggerFactory.getLogger(CommonApplication.class);
 
     @Autowired
     Environment environment;
+    @Reference
+    private SysAdminUserService sysAdminUserService;
 
     public static void main(String[] args) {
-        SpringApplication.run(SystemApplication.class, args);
+        SpringApplication.run(CommonApplication.class, args);
     }
 
     @PostConstruct
@@ -41,5 +43,7 @@ public class SystemApplication {
         System.err.println(environment.getProperty("spring.datasource.druid.url"));
         System.err.println(environment.getProperty("spring.datasource.url"));
         System.err.println(environment.getProperty("dubbo.application.name"));
+        System.err.println(environment.getProperty("dubbo.registry.address"));
+        System.err.println(sysAdminUserService.getSysAdminVO("1"));
     }
 }

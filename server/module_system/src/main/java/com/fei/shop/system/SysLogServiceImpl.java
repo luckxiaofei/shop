@@ -1,6 +1,6 @@
 package com.fei.shop.system;
 
-import com.fei.db.mapper.SysLogMapper;
+import com.fei.shop.mapper.SysLogMapper;
 import com.fei.entities.po.SysLog;
 import com.fei.service.SysLogService;
 import org.springframework.beans.factory.annotation.Autowired;

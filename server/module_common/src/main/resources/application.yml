@@ -4,9 +4,32 @@ spring:
   messages:
     encoding: UTF-8
 
-logging:
-  level:
-    root:  ERROR
-    org.springframework:  ERROR
-    org.mybatis:  ERROR
-    com.fei.common:  DEBUG
+#logging:
+#  level:
+#    root:  ERROR
+#    org.springframework:  ERROR
+#    org.mybatis:  ERROR
+#    com.fei.common:  DEBUG
+
+
+server:
+  port: ${random.int[8080,9000]}
+
+dubbo:
+  protocol:
+    port: ${random.int[20880,20980]}
+    name: dubbo
+  application:
+    name: module_common
+    qosEnable: false
+  scan:
+    basePackages: com.fei.shop
+  registry:
+    id: module_common_registry
+    address: nacos://47.115.124.84:8848
+
+
+
+
+
+

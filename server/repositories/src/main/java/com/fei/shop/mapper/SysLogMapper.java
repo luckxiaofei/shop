@@ -1,4 +1,4 @@
-package com.fei.db.mapper;
+package com.fei.shop.mapper;
 
 import com.fei.entities.po.SysLog;
 import org.springframework.stereotype.Repository;

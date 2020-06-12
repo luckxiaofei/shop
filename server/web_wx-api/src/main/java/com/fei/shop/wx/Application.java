@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@SpringBootApplication(scanBasePackages = {"com.fei.db", "com.fei.common", "com.fei.wx"})
-@MapperScan("com.fei.db.dao")
+@SpringBootApplication(scanBasePackages = {"com.fei.shop", "com.fei.common", "com.fei.wx"})
+@MapperScan("com.fei.shop.dao")
 @EnableTransactionManagement
 @EnableScheduling
 public class Application {

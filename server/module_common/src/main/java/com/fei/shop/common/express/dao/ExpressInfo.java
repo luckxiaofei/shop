@@ -20,7 +20,7 @@ public class ExpressInfo {
     @JsonProperty("ShipperCode")
     private String ShipperCode;
     @JsonProperty("Traces")
-    private List<Traces> Traces;
+    private List<com.fei.common.express.dao.Traces> Traces;
     @JsonProperty("State")
     private String State;
     @JsonProperty("EBusinessID")
@@ -48,11 +48,11 @@ public class ExpressInfo {
         this.ShipperCode = ShipperCode;
     }
 
-    public List<Traces> getTraces() {
+    public List<com.fei.common.express.dao.Traces> getTraces() {
         return Traces;
     }
 
-    public void setTraces(List<Traces> Traces) {
+    public void setTraces(List<com.fei.common.express.dao.Traces> Traces) {
         this.Traces = Traces;
     }
 
