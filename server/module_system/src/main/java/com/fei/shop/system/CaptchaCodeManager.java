@@ -1,4 +1,4 @@
-package com.fei.wx.service;
+package com.fei.shop.system;
 
 
 import com.fei.entities.dto.CaptchaItem;

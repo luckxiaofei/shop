@@ -1,4 +1,4 @@
-package com.fei.wx.service;
+package com.fei.shop.system;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

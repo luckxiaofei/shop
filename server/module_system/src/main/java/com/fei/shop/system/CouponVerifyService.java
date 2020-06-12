@@ -1,4 +1,4 @@
-package com.fei.module.system;
+package com.fei.shop.system;
 
 import org.apache.dubbo.config.annotation.Service;
 

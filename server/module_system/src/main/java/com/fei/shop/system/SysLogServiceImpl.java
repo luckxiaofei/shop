@@ -1,4 +1,4 @@
-package com.fei.module.system;
+package com.fei.shop.system;
 
 import com.fei.db.mapper.SysLogMapper;
 import com.fei.entities.po.SysLog;
