@@ -16,7 +16,7 @@ public class NotifyService {
     private String sendFrom;
     private String sendTo;
 
-    private SmsSender smsSender;
+    private com.fei.common.notify.SmsSender smsSender;
     private List<Map<String, String>> smsTemplate = new ArrayList<>();
 
     private List<Map<String, String>> wxTemplate = new ArrayList<>();
@@ -51,7 +51,7 @@ public class NotifyService {
      * @param params      通知模版内容里的参数，类似"您的验证码为{1}"中{1}的值
      */
     @Async
-    public void notifySmsTemplate(String phoneNumber, NotifyType notifyType, String[] params) {
+    public void notifySmsTemplate(String phoneNumber, com.fei.common.notify.NotifyType notifyType, String[] params) {
         if (smsSender == null) {
             return;
         }
@@ -72,7 +72,7 @@ public class NotifyService {
      * @param params      通知模版内容里的参数，类似"您的验证码为{1}"中{1}的值
      * @return
      */
-    public SmsResult notifySmsTemplateSync(String phoneNumber, NotifyType notifyType, String[] params) {
+    public com.fei.common.notify.SmsResult notifySmsTemplateSync(String phoneNumber, com.fei.common.notify.NotifyType notifyType, String[] params) {
         if (smsSender == null)
             return null;
 
@@ -99,7 +99,7 @@ public class NotifyService {
         mailSender.send(message);
     }
 
-    private String getTemplateId(NotifyType notifyType, List<Map<String, String>> values) {
+    private String getTemplateId(com.fei.common.notify.NotifyType notifyType, List<Map<String, String>> values) {
         for (Map<String, String> item : values) {
             String notifyTypeStr = notifyType.getType();
 
@@ -121,7 +121,7 @@ public class NotifyService {
         this.sendTo = sendTo;
     }
 
-    public void setSmsSender(SmsSender smsSender) {
+    public void setSmsSender(com.fei.common.notify.SmsSender smsSender) {
         this.smsSender = smsSender;
     }
 

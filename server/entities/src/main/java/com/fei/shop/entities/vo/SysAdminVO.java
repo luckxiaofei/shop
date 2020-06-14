@@ -1,15 +1,14 @@
 package com.fei.entities.vo;
 
-import com.fei.entities.po.SysAdmin;
-import com.fei.entities.po.SysRole;
+import com.fei.shop.entities.po.AdminUser;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class SysAdminVO extends SysAdmin {
+public class SysAdminVO extends AdminUser {
 
-    private List<SysRole> sysRoleList;
+    private List<AdminUser> sysRoleList;
     private List<Integer> sysRoleIdList;
 
 

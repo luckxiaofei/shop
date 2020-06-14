@@ -1,6 +1,5 @@
 package com.fei.common.storage;
 
-import com.fei.entities.po.SysStorage;
 import jodd.util.CharUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;

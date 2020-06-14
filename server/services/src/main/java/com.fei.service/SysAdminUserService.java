@@ -1,10 +1,10 @@
 package com.fei.service;
 
-import com.fei.entities.vo.SysAdminVO;
+import com.fei.shop.entities.po.AdminUser;
 
 import java.util.List;
 
 public interface SysAdminUserService {
-    List<com.fei.entities.po.SysAdmin> getSysAdminVO();
-    List<com.fei.entities.po.SysAdmin> getSysAdminVO(String name);
+    List<AdminUser> getSysAdminVO();
+    List<AdminUser> getSysAdminVO(String name);
 }

@@ -11,7 +11,7 @@ import java.io.IOException;
 /*
  * 腾讯云短信服务
  */
-public class TencentSmsSender implements SmsSender {
+public class TencentSmsSender implements com.fei.common.notify.SmsSender {
     private final Log logger = LogFactory.getLog(TencentSmsSender.class);
 
     private SmsSingleSender sender;
@@ -26,12 +26,12 @@ public class TencentSmsSender implements SmsSender {
     }
 
     @Override
-    public SmsResult send(String phone, String content) {
+    public com.fei.common.notify.SmsResult send(String phone, String content) {
         try {
             SmsSingleSenderResult result = sender.send(0, "86", phone, content, "", "");
             logger.debug(result);
 
-            SmsResult smsResult = new SmsResult();
+            com.fei.common.notify.SmsResult smsResult = new com.fei.common.notify.SmsResult();
             smsResult.setSuccessful(true);
             smsResult.setResult(result);
             return smsResult;
@@ -39,18 +39,18 @@ public class TencentSmsSender implements SmsSender {
             logger.error(e.getMessage(), e);
         }
 
-        SmsResult smsResult = new SmsResult();
+        com.fei.common.notify.SmsResult smsResult = new com.fei.common.notify.SmsResult();
         smsResult.setSuccessful(false);
         return smsResult;
     }
 
     @Override
-    public SmsResult sendWithTemplate(String phone, String templateId, String[] params) {
+    public com.fei.common.notify.SmsResult sendWithTemplate(String phone, String templateId, String[] params) {
         try {
             SmsSingleSenderResult result = sender.sendWithParam("86", phone, Integer.parseInt(templateId), params, this.sign, "", "");
             logger.debug(result);
 
-            SmsResult smsResult = new SmsResult();
+            com.fei.common.notify.SmsResult smsResult = new com.fei.common.notify.SmsResult();
             smsResult.setSuccessful(true);
             smsResult.setResult(result);
             return smsResult;
@@ -58,7 +58,7 @@ public class TencentSmsSender implements SmsSender {
             logger.error(e.getMessage(), e);
         }
 
-        SmsResult smsResult = new SmsResult();
+        com.fei.common.notify.SmsResult smsResult = new com.fei.common.notify.SmsResult();
         smsResult.setSuccessful(false);
         return smsResult;
     }
