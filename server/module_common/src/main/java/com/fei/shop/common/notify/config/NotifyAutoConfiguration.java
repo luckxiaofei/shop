@@ -1,9 +1,10 @@
 package com.fei.common.notify.config;
 
-import com.github.qcloudsms.SmsSingleSender;
 import com.fei.common.notify.AliyunSmsSender;
 import com.fei.common.notify.NotifyService;
 import com.fei.common.notify.TencentSmsSender;
+
+import com.github.qcloudsms.SmsSingleSender;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,12 +14,12 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import java.util.Properties;
 
 @Configuration
-@EnableConfigurationProperties(NotifyProperties.class)
+@EnableConfigurationProperties(com.fei.common.notify.config.NotifyProperties.class)
 public class NotifyAutoConfiguration {
 
-    private final NotifyProperties properties;
+    private final com.fei.common.notify.config.NotifyProperties properties;
 
-    public NotifyAutoConfiguration(NotifyProperties properties) {
+    public NotifyAutoConfiguration(com.fei.common.notify.config.NotifyProperties properties) {
         this.properties = properties;
     }
 
@@ -26,14 +27,14 @@ public class NotifyAutoConfiguration {
     public NotifyService notifyService() {
         NotifyService notifyService = new NotifyService();
 
-        NotifyProperties.Mail mailConfig = properties.getMail();
+        com.fei.common.notify.config.NotifyProperties.Mail mailConfig = properties.getMail();
         if (mailConfig.isEnable()) {
             notifyService.setMailSender(mailSender());
             notifyService.setSendFrom(mailConfig.getSendfrom());
             notifyService.setSendTo(mailConfig.getSendto());
         }
 
-        NotifyProperties.Sms smsConfig = properties.getSms();
+        com.fei.common.notify.config.NotifyProperties.Sms smsConfig = properties.getSms();
         if (smsConfig.isEnable()) {
             if(smsConfig.getActive().equals("tencent")) {
                 notifyService.setSmsSender(tencentSmsSender());
@@ -49,7 +50,7 @@ public class NotifyAutoConfiguration {
     }
 
     public JavaMailSender mailSender() {
-        NotifyProperties.Mail mailConfig = properties.getMail();
+        com.fei.common.notify.config.NotifyProperties.Mail mailConfig = properties.getMail();
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost(mailConfig.getHost());
         mailSender.setUsername(mailConfig.getUsername());
@@ -69,18 +70,18 @@ public class NotifyAutoConfiguration {
     }
 
     public TencentSmsSender tencentSmsSender() {
-        NotifyProperties.Sms smsConfig = properties.getSms();
+        com.fei.common.notify.config.NotifyProperties.Sms smsConfig = properties.getSms();
         TencentSmsSender smsSender = new TencentSmsSender();
-        NotifyProperties.Sms.Tencent tencent = smsConfig.getTencent();
+        com.fei.common.notify.config.NotifyProperties.Sms.Tencent tencent = smsConfig.getTencent();
         smsSender.setSender(new SmsSingleSender(tencent.getAppid(), tencent.getAppkey()));
         smsSender.setSign(smsConfig.getSign());
         return smsSender;
     }
 
     public AliyunSmsSender aliyunSmsSender() {
-        NotifyProperties.Sms smsConfig = properties.getSms();
+        com.fei.common.notify.config.NotifyProperties.Sms smsConfig = properties.getSms();
         AliyunSmsSender smsSender = new AliyunSmsSender();
-        NotifyProperties.Sms.Aliyun aliyun = smsConfig.getAliyun();
+        com.fei.common.notify.config.NotifyProperties.Sms.Aliyun aliyun = smsConfig.getAliyun();
         smsSender.setSign(smsConfig.getSign());
         smsSender.setRegionId(aliyun.getRegionId());
         smsSender.setAccessKeyId(aliyun.getAccessKeyId());
