@@ -8,5 +8,11 @@ logging:
   level:
     root:  DEBUG
     org.springframework:  DEBUG
-    org.mybatis:  info
-    com.fei.shop:  info
+    org.mybatis:  DEBUG
+    com.fei.shop.mapper:  DEBUG
+#    mapper:  DEBUG
+
+#mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

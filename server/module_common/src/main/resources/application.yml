@@ -4,12 +4,13 @@ spring:
   messages:
     encoding: UTF-8
 
-#logging:
-#  level:
-#    root:  ERROR
-#    org.springframework:  ERROR
-#    org.mybatis:  ERROR
-#    com.fei.common:  DEBUG
+logging:
+  level:
+#    root:  DEBUG
+#    org.springframework:  DEBUG
+    org.mybatis:  DEBUG
+    com.fei.shop.mapper:  DEBUG
+#    mapper:  DEBUG
 
 
 server:

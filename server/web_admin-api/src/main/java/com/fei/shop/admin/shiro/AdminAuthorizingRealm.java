@@ -68,12 +68,12 @@ public class AdminAuthorizingRealm extends AuthorizingRealm {
             throw new AccountException("密码不能为空");
         }
 
-        List<SysAdminVO> sysAdminVOList = sysAdminUserService.getSysAdminVO(username);
+        List<com.fei.entities.po.SysAdmin> sysAdminVOList = sysAdminUserService.getSysAdminVO(username);
         Assert.state(sysAdminVOList.size() > 1, "同一个用户名存在多个账户");
         if (sysAdminVOList.size() == 0) {
             throw new UnknownAccountException("找不到用户（" + username + "）的帐号信息");
         }
-        SysAdminVO sysAdminVO = sysAdminVOList.get(0);
+        com.fei.entities.po.SysAdmin sysAdminVO = sysAdminVOList.get(0);
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         if (!encoder.matches(password, sysAdminVO.getPassword())) {

@@ -36,9 +36,6 @@ public class SystemApplication {
         String[] defaultProfiles = environment.getDefaultProfiles();
         System.err.println(JSON.json(activeProfiles));
         System.err.println(JSON.json(defaultProfiles));
-        System.err.println(environment.getProperty("spring.datasource.druid.url"));
-        System.err.println(environment.getProperty("spring.datasource.url"));
-        System.err.println(environment.getProperty("dubbo.application.name"));
         System.err.println(environment.getProperty("dubbo.registry.address"));
     }
 }

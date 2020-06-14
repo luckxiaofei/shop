@@ -1,5 +1,6 @@
 package com.fei.shop.system;
 
+import com.alibaba.fastjson.JSON;
 import com.fei.entities.po.SysAdmin;
 import com.fei.entities.po.SysAdminRole;
 import com.fei.service.SysAdminUserService;
@@ -26,20 +27,15 @@ public class SysAdminUserServiceImpl implements SysAdminUserService {
 
     @Override
     public List<SysAdmin> getSysAdminVO() {
-        ArrayList<SysAdmin> result = Lists.newArrayList();
-        List<SysAdmin> sysAdminList = sysAdminMapper.selectAll();
-        if (sysAdminList == null || sysAdminList.size() > 1) {
-            return result;
-        }
-
-        for (SysAdmin SysAdmin : sysAdminList) {
-            Integer adminId = SysAdmin.getId();
-            Example exampleSysAdminRole = new Example(SysAdminRole.class);
-            exampleSysAdminRole.createCriteria().andEqualTo("userId", adminId);
-            List<SysAdminRole> sysAdminRoles = sysAdminRoleMapper.selectByExample(exampleSysAdminRole);
-            List<Integer> roleIdList = sysAdminRoles.stream().map(SysAdminRole::getRoleId).collect(Collectors.toList());
-        }
-        return result;
+        List<SysAdmin> sysAdminList = sysAdminMapper.listSysAdminVOByName("1");
+        System.err.println(JSON.toJSON(sysAdminList));
+        return sysAdminList;
     }
 
+    @Override
+    public List<SysAdmin> getSysAdminVO(String name) {
+        List<SysAdmin> sysAdminList = sysAdminMapper.listSysAdminVOByName("1");
+        System.err.println(JSON.toJSON(sysAdminList));
+        return null;
+    }
 }

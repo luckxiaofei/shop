@@ -18,6 +18,14 @@ dubbo:
     id: module_system_registry
     address: nacos://47.115.124.84:8848
 
+logging:
+  level:
+#    root:  DEBUG
+#    org.springframework:  DEBUG
+    org.mybatis:  DEBUG
+    com.fei.shop.mapper:  DEBUG
+#    mapper:  DEBUG
+
 
 
 
