@@ -17,10 +17,6 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.List;
 
-//@SpringBootApplication(scanBasePackages = {"com.fei.shop", "com.fei.common", "com.fei.wx"})
-//@MapperScan("com.fei.shop.dao")
-//@EnableTransactionManagement
-//@EnableScheduling
 @EnableDubbo
 @MapperScan("com.fei.shop.mapper")
 @SpringBootApplication

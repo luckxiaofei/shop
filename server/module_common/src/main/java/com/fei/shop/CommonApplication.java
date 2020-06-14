@@ -44,6 +44,6 @@ public class CommonApplication {
         System.err.println(environment.getProperty("spring.datasource.url"));
         System.err.println(environment.getProperty("dubbo.application.name"));
         System.err.println(environment.getProperty("dubbo.registry.address"));
-        System.err.println(sysAdminUserService.getSysAdminVO("1"));
+        System.err.println(sysAdminUserService.getSysAdminVO());
     }
 }

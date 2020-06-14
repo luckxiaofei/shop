@@ -5,5 +5,5 @@ import com.fei.entities.vo.SysAdminVO;
 import java.util.List;
 
 public interface SysAdminUserService {
-    List<SysAdminVO> getSysAdminVO(String userName);
+    List<com.fei.entities.po.SysAdmin> getSysAdminVO();
 }

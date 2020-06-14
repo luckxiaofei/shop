@@ -19,8 +19,8 @@
     <resultMap id="MapVo" type="com.fei.entities.vo.SysAdminVO" extends="BaseResultMap"></resultMap>
 
     <select id="listSysAdminVOByName" resultMap="MapVo">
-      select id, user_name, password, last_login_ip, last_login_time, avatar, add_time, update_time, deleted
-      from sys_admin
-      where user_name=#{name}
+       select id, password, last_login_ip, last_login_time, avatar, add_time, update_time, deleted
+        from admin
+        where password=#{name}
     </select>
 </mapper>
