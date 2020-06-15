@@ -4,78 +4,59 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <context id="Mysql"
-             targetRuntime="com.dhcx.mybatis.generator.plugin.mapper.TkMyBatis3SimpleImpl"
-             defaultModelType="flat">
-        <!--处理sql中的`符号-->
+    <!-- 引入 application.properties -->
+
+    <!--    <properties resource="application.properties"/>-->
+
+    <!-- MyBatis3Simple：不生成 Example相关类及方法 defaultModelType="flat" -->
+    <context id="MysqlContext" targetRuntime="MyBatis3Simple">
+
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
-        <!--添加自定义的继承接口-->
+
+        <!-- 指定生成 Mapper 的继承模板 -->
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
         </plugin>
-        <plugin type="com.dhcx.mybatis.generator.plugin.model.IngoreSetterAndGetterPlugin"/>
 
-        <!--数据源配置-->
+        <!--注意context内的文件要按序放-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+
+        <!-- jdbc 连接配置 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://47.115.124.84:3306/info"
+                        connectionURL="jdbc:mysql://47.115.124.84:3306/info?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;verifyServerCertificate=false&amp;useSSL=false"
                         userId="root"
                         password="1qaz@WSX">
         </jdbcConnection>
 
-        <!--model包路径-->
-        <javaModelGenerator targetPackage="com.seebon.bay.test.model" targetProject="src/main/java"/>
-        <!--mapper.xml包路径-->
-        <sqlMapGenerator targetPackage="mapper/test" targetProject="src/main/resources"/>
-        <!--mapper包路径-->
-        <javaClientGenerator targetPackage="com.seebon.bay.test.dao" targetProject="src/main/java"
+        <javaTypeResolver>
+            <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 生成实体类的包名和位置 ，targetPackage指的是包名,targetProject值得是路径位置-->
+        <!-- 对于生成的pojo所在包,pojo其实就是domain Entity-->
+        <javaModelGenerator targetPackage="com.fei.db.entity.po" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 对于生成的mapper.xml所在目录 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+
+        <!-- 配置mapper对应的java映射  也可以叫dao层 -->
+        <javaClientGenerator targetPackage="com.fei.db.dao" targetProject="src/main/java"
                              type="XMLMAPPER"/>
-        <!--表配置，tableName支持%，表示全部生成-->
-        <table tableName="t_sys_data_dict" domainObjectName="Dict">
-            <!--mysql 配置-->
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+
+        <!-- table可以有多个,每个数据库中的表都可以写一个table，tableName表示要匹配的数据库表,也可以在tableName属性中通过使用%通配符来匹配所有数据库表,只有匹配的表才会自动生成文件 -->
+        <table tableName="sys_log">
+
         </table>
+
     </context>
 </generatorConfiguration>
-
-
-        <!--
-        使用方法：
-        1.安装jar到maven仓库 （自定义插件主要是控制文件名字自定义和注解的修改）
-        2.在mysqlpom文件添加如下配置
-         <properties>
-                <mysql-connector-java.version>5.1.21</mysql-connector-java.version>
-            </properties>
-
-         <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.mybatis.generator</groupId>
-                        <artifactId>mybatis-generator-maven-plugin</artifactId>
-                        <version>1.3.5</version>
-                        <configuration>
-                            <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
-                            <overwrite>true</overwrite>
-                            <verbose>true</verbose>
-                        </configuration>
-                        <dependencies>
-                            <dependency>
-                                <groupId>mysql</groupId>
-                                <artifactId>mysql-connector-java</artifactId>
-                                <version>${mysql-connector-java.version}</version>
-                            </dependency>
-                            <dependency>
-                                <groupId>tk.mybatis</groupId>
-                                <artifactId>mapper</artifactId>
-                                <version>3.4.3</version>
-                            </dependency>
-                            <dependency>
-                                <groupId>dhcx</groupId>
-                                <artifactId>mybatis.generator-extend-plugin</artifactId>
-                                <version>1.0-SNAPSHOT</version>
-                            </dependency>
-                        </dependencies>
-                    </plugin>
-                </plugins>
-            </build>
-        -->
