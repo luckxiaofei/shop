@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fei.shop.mapper.GoodsCouponMapper">
+  <resultMap id="BaseResultMap" type="com.fei.shop.entities.po.GoodsCoupon">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="desc" jdbcType="VARCHAR" property="desc" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="total" jdbcType="INTEGER" property="total" />
+    <result column="discount" jdbcType="DECIMAL" property="discount" />
+    <result column="min" jdbcType="DECIMAL" property="min" />
+    <result column="limit" jdbcType="SMALLINT" property="limit" />
+    <result column="type" jdbcType="SMALLINT" property="type" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="goods_type" jdbcType="SMALLINT" property="goodsType" />
+    <result column="goods_value" jdbcType="VARCHAR" property="goodsValue" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="time_type" jdbcType="SMALLINT" property="timeType" />
+    <result column="days" jdbcType="SMALLINT" property="days" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="deleted" jdbcType="BIT" property="deleted" />
+  </resultMap>
+</mapper>

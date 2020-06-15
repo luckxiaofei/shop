@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fei.shop.mapper.UserOrderGoodsDetailMapper">
+  <resultMap id="BaseResultMap" type="com.fei.shop.entities.po.UserOrderGoodsDetail">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_sn" jdbcType="VARCHAR" property="goodsSn" />
+    <result column="number" jdbcType="SMALLINT" property="number" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="specifications" jdbcType="VARCHAR" property="specifications" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="comment" jdbcType="INTEGER" property="comment" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="deleted" jdbcType="BIT" property="deleted" />
+  </resultMap>
+</mapper>

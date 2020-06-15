@@ -1,47 +1,34 @@
 package com.fei.shop.entities.po;
 
-import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import lombok.Data;
+import javax.persistence.*;
 
-
-/**
- * admin_notice
- * @author
- */
-@Table(name="admin_notice")
-@Data
-public class AdminRolePermission implements Serializable {
+@Table(name = "admin_role_permission")
+public class AdminRolePermission {
     @Id
-   private Integer id;
+    private Integer id;
 
     /**
-     * 通知标题
+     * 角色ID
      */
-    private String title;
+    @Column(name = "role_id")
+    private Integer roleId;
 
     /**
-     * 通知内容
+     * 权限
      */
-    private String content;
-
-    /**
-     * 创建通知的管理员ID，如果是系统内置通知则是0.
-     */
-    private Integer adminId;
+    private String permission;
 
     /**
      * 创建时间
      */
+    @Column(name = "add_time")
     private Date addTime;
 
     /**
      * 更新时间
      */
+    @Column(name = "update_time")
     private Date updateTime;
 
     /**
@@ -49,5 +36,107 @@ public class AdminRolePermission implements Serializable {
      */
     private Boolean deleted;
 
-    private static final long serialVersionUID = 1L;
+    /**
+     * @return id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * @param id
+     */
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    /**
+     * 获取角色ID
+     *
+     * @return role_id - 角色ID
+     */
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    /**
+     * 设置角色ID
+     *
+     * @param roleId 角色ID
+     */
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
+    /**
+     * 获取权限
+     *
+     * @return permission - 权限
+     */
+    public String getPermission() {
+        return permission;
+    }
+
+    /**
+     * 设置权限
+     *
+     * @param permission 权限
+     */
+    public void setPermission(String permission) {
+        this.permission = permission == null ? null : permission.trim();
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return add_time - 创建时间
+     */
+    public Date getAddTime() {
+        return addTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param addTime 创建时间
+     */
+    public void setAddTime(Date addTime) {
+        this.addTime = addTime;
+    }
+
+    /**
+     * 获取更新时间
+     *
+     * @return update_time - 更新时间
+     */
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    /**
+     * 设置更新时间
+     *
+     * @param updateTime 更新时间
+     */
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    /**
+     * 获取逻辑删除
+     *
+     * @return deleted - 逻辑删除
+     */
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
+    /**
+     * 设置逻辑删除
+     *
+     * @param deleted 逻辑删除
+     */
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
 }

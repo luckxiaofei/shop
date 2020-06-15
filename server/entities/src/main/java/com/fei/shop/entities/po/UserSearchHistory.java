@@ -1,47 +1,39 @@
 package com.fei.shop.entities.po;
 
-import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import lombok.Data;
+import javax.persistence.*;
 
-
-/**
- * admin_notice
- * @author
- */
-@Table(name="admin_notice")
-@Data
-public class UserSearchHistory implements Serializable {
+@Table(name = "user_search_history")
+public class UserSearchHistory {
     @Id
-   private Integer id;
+    private Integer id;
 
     /**
-     * 通知标题
+     * 用户表的用户ID
      */
-    private String title;
+    @Column(name = "user_id")
+    private Integer userId;
 
     /**
-     * 通知内容
+     * 搜索关键字
      */
-    private String content;
+    private String keyword;
 
     /**
-     * 创建通知的管理员ID，如果是系统内置通知则是0.
+     * 搜索来源，如pc、wx、app
      */
-    private Integer adminId;
+    private String from;
 
     /**
      * 创建时间
      */
+    @Column(name = "add_time")
     private Date addTime;
 
     /**
      * 更新时间
      */
+    @Column(name = "update_time")
     private Date updateTime;
 
     /**
@@ -49,5 +41,125 @@ public class UserSearchHistory implements Serializable {
      */
     private Boolean deleted;
 
-    private static final long serialVersionUID = 1L;
+    /**
+     * @return id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * @param id
+     */
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    /**
+     * 获取用户表的用户ID
+     *
+     * @return user_id - 用户表的用户ID
+     */
+    public Integer getUserId() {
+        return userId;
+    }
+
+    /**
+     * 设置用户表的用户ID
+     *
+     * @param userId 用户表的用户ID
+     */
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    /**
+     * 获取搜索关键字
+     *
+     * @return keyword - 搜索关键字
+     */
+    public String getKeyword() {
+        return keyword;
+    }
+
+    /**
+     * 设置搜索关键字
+     *
+     * @param keyword 搜索关键字
+     */
+    public void setKeyword(String keyword) {
+        this.keyword = keyword == null ? null : keyword.trim();
+    }
+
+    /**
+     * 获取搜索来源，如pc、wx、app
+     *
+     * @return from - 搜索来源，如pc、wx、app
+     */
+    public String getFrom() {
+        return from;
+    }
+
+    /**
+     * 设置搜索来源，如pc、wx、app
+     *
+     * @param from 搜索来源，如pc、wx、app
+     */
+    public void setFrom(String from) {
+        this.from = from == null ? null : from.trim();
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return add_time - 创建时间
+     */
+    public Date getAddTime() {
+        return addTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param addTime 创建时间
+     */
+    public void setAddTime(Date addTime) {
+        this.addTime = addTime;
+    }
+
+    /**
+     * 获取更新时间
+     *
+     * @return update_time - 更新时间
+     */
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    /**
+     * 设置更新时间
+     *
+     * @param updateTime 更新时间
+     */
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    /**
+     * 获取逻辑删除
+     *
+     * @return deleted - 逻辑删除
+     */
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
+    /**
+     * 设置逻辑删除
+     *
+     * @param deleted 逻辑删除
+     */
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
 }

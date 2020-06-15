@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fei.shop.mapper.AdminNoticeReadingRecordsMapper">
+  <resultMap id="BaseResultMap" type="com.fei.shop.entities.po.AdminNoticeReadingRecords">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="notice_id" jdbcType="INTEGER" property="noticeId" />
+    <result column="notice_title" jdbcType="VARCHAR" property="noticeTitle" />
+    <result column="admin_id" jdbcType="INTEGER" property="adminId" />
+    <result column="read_time" jdbcType="TIMESTAMP" property="readTime" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="deleted" jdbcType="BIT" property="deleted" />
+  </resultMap>
+</mapper>

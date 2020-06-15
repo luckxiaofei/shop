@@ -1,53 +1,120 @@
 package com.fei.shop.entities.po;
 
-import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import lombok.Data;
+import javax.persistence.*;
 
-
-/**
- * admin_notice
- * @author
- */
-@Table(name="admin_notice")
-@Data
-public class UserMoney implements Serializable {
+@Table(name = "user_money")
+public class UserMoney {
     @Id
-   private Integer id;
+    private Integer id;
 
     /**
-     * 通知标题
+     * 用户id
      */
-    private String title;
+    @Column(name = "userId")
+    private Integer userid;
 
     /**
-     * 通知内容
+     * 金额
      */
-    private String content;
-
-    /**
-     * 创建通知的管理员ID，如果是系统内置通知则是0.
-     */
-    private Integer adminId;
+    private BigDecimal money;
 
     /**
      * 创建时间
      */
+    @Column(name = "add_time")
     private Date addTime;
 
     /**
      * 更新时间
      */
+    @Column(name = "update_time")
     private Date updateTime;
 
     /**
-     * 逻辑删除
+     * @return id
      */
-    private Boolean deleted;
+    public Integer getId() {
+        return id;
+    }
 
-    private static final long serialVersionUID = 1L;
+    /**
+     * @param id
+     */
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    /**
+     * 获取用户id
+     *
+     * @return userId - 用户id
+     */
+    public Integer getUserid() {
+        return userid;
+    }
+
+    /**
+     * 设置用户id
+     *
+     * @param userid 用户id
+     */
+    public void setUserid(Integer userid) {
+        this.userid = userid;
+    }
+
+    /**
+     * 获取金额
+     *
+     * @return money - 金额
+     */
+    public BigDecimal getMoney() {
+        return money;
+    }
+
+    /**
+     * 设置金额
+     *
+     * @param money 金额
+     */
+    public void setMoney(BigDecimal money) {
+        this.money = money;
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return add_time - 创建时间
+     */
+    public Date getAddTime() {
+        return addTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param addTime 创建时间
+     */
+    public void setAddTime(Date addTime) {
+        this.addTime = addTime;
+    }
+
+    /**
+     * 获取更新时间
+     *
+     * @return update_time - 更新时间
+     */
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    /**
+     * 设置更新时间
+     *
+     * @param updateTime 更新时间
+     */
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
 }

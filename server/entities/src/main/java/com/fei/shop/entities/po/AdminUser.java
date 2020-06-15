@@ -1,45 +1,50 @@
 package com.fei.shop.entities.po;
 
-import lombok.Data;
-
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.*;
 
-/**
- * admin_notice
- * @author
- */
-@Table(name="admin_notice")
-@Data
-public class AdminUser implements Serializable {
+@Table(name = "admin_user")
+public class AdminUser {
     @Id
-   private Integer id;
+    private Integer id;
 
     /**
-     * 通知标题
+     * 管理员名称
      */
-    private String title;
+    private String username;
 
     /**
-     * 通知内容
+     * 管理员密码
      */
-    private String content;
+    private String password;
 
     /**
-     * 创建通知的管理员ID，如果是系统内置通知则是0.
+     * 最近一次登录IP地址
      */
-    private Integer adminId;
+    @Column(name = "last_login_ip")
+    private String lastLoginIp;
+
+    /**
+     * 最近一次登录时间
+     */
+    @Column(name = "last_login_time")
+    private Date lastLoginTime;
+
+    /**
+     * 头像图片
+     */
+    private String avatar;
 
     /**
      * 创建时间
      */
+    @Column(name = "add_time")
     private Date addTime;
 
     /**
      * 更新时间
      */
+    @Column(name = "update_time")
     private Date updateTime;
 
     /**
@@ -47,5 +52,185 @@ public class AdminUser implements Serializable {
      */
     private Boolean deleted;
 
-    private static final long serialVersionUID = 1L;
+    /**
+     * 角色列表
+     */
+    @Column(name = "role_ids")
+    private String roleIds;
+
+    /**
+     * @return id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * @param id
+     */
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    /**
+     * 获取管理员名称
+     *
+     * @return username - 管理员名称
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * 设置管理员名称
+     *
+     * @param username 管理员名称
+     */
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
+    }
+
+    /**
+     * 获取管理员密码
+     *
+     * @return password - 管理员密码
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * 设置管理员密码
+     *
+     * @param password 管理员密码
+     */
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    /**
+     * 获取最近一次登录IP地址
+     *
+     * @return last_login_ip - 最近一次登录IP地址
+     */
+    public String getLastLoginIp() {
+        return lastLoginIp;
+    }
+
+    /**
+     * 设置最近一次登录IP地址
+     *
+     * @param lastLoginIp 最近一次登录IP地址
+     */
+    public void setLastLoginIp(String lastLoginIp) {
+        this.lastLoginIp = lastLoginIp == null ? null : lastLoginIp.trim();
+    }
+
+    /**
+     * 获取最近一次登录时间
+     *
+     * @return last_login_time - 最近一次登录时间
+     */
+    public Date getLastLoginTime() {
+        return lastLoginTime;
+    }
+
+    /**
+     * 设置最近一次登录时间
+     *
+     * @param lastLoginTime 最近一次登录时间
+     */
+    public void setLastLoginTime(Date lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
+    }
+
+    /**
+     * 获取头像图片
+     *
+     * @return avatar - 头像图片
+     */
+    public String getAvatar() {
+        return avatar;
+    }
+
+    /**
+     * 设置头像图片
+     *
+     * @param avatar 头像图片
+     */
+    public void setAvatar(String avatar) {
+        this.avatar = avatar == null ? null : avatar.trim();
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return add_time - 创建时间
+     */
+    public Date getAddTime() {
+        return addTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param addTime 创建时间
+     */
+    public void setAddTime(Date addTime) {
+        this.addTime = addTime;
+    }
+
+    /**
+     * 获取更新时间
+     *
+     * @return update_time - 更新时间
+     */
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    /**
+     * 设置更新时间
+     *
+     * @param updateTime 更新时间
+     */
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    /**
+     * 获取逻辑删除
+     *
+     * @return deleted - 逻辑删除
+     */
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
+    /**
+     * 设置逻辑删除
+     *
+     * @param deleted 逻辑删除
+     */
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+
+    /**
+     * 获取角色列表
+     *
+     * @return role_ids - 角色列表
+     */
+    public String getRoleIds() {
+        return roleIds;
+    }
+
+    /**
+     * 设置角色列表
+     *
+     * @param roleIds 角色列表
+     */
+    public void setRoleIds(String roleIds) {
+        this.roleIds = roleIds == null ? null : roleIds.trim();
+    }
 }

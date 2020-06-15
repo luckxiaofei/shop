@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fei.shop.mapper.GoodsRefundMapper">
+  <resultMap id="BaseResultMap" type="com.fei.shop.entities.po.GoodsRefund">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="aftersale_sn" jdbcType="VARCHAR" property="aftersaleSn" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="type" jdbcType="SMALLINT" property="type" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="amount" jdbcType="DECIMAL" property="amount" />
+    <result column="pictures" jdbcType="VARCHAR" property="pictures" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="handle_time" jdbcType="TIMESTAMP" property="handleTime" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="deleted" jdbcType="BIT" property="deleted" />
+  </resultMap>
+</mapper>
