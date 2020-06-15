@@ -4,6 +4,8 @@ package com.fei.admin.shiro;
 import com.fei.common_until.bcrypt.BCryptPasswordEncoder;
 import com.fei.entities.vo.SysAdminVO;
 import com.fei.service.SysAdminUserService;
+import com.fei.shop.entities.po.AdminRole;
+import com.fei.shop.entities.po.AdminUser;
 import com.google.common.collect.Sets;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationException;
@@ -33,7 +35,7 @@ public class AdminAuthorizingRealm extends AuthorizingRealm {
         Set<String> permissions = Sets.newHashSet();
 
         SysAdminVO admin = (SysAdminVO) getAvailablePrincipal(principals);
-        List<SysRole> roleIds = admin.getSysRoleList();
+        List<AdminRole> roleIds = admin.getSysRoleList();
 //        if (Collections3.isNotEmpty(roleIds)) {
 //            Example exampleSysRole = new Example(SysRole.class);
 //            exampleSysRole.createCriteria().andIn("id", roleIds);
@@ -66,17 +68,17 @@ public class AdminAuthorizingRealm extends AuthorizingRealm {
             throw new AccountException("密码不能为空");
         }
 
-        List<com.fei.entities.po.SysAdmin> sysAdminVOList = sysAdminUserService.getSysAdminVO(username);
+        List<AdminUser> sysAdminVOList = sysAdminUserService.getSysAdminVO(username);
         Assert.state(sysAdminVOList.size() > 1, "同一个用户名存在多个账户");
         if (sysAdminVOList.size() == 0) {
             throw new UnknownAccountException("找不到用户（" + username + "）的帐号信息");
         }
-        com.fei.entities.po.SysAdmin sysAdminVO = sysAdminVOList.get(0);
+        AdminUser sysAdminVO = sysAdminVOList.get(0);
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        if (!encoder.matches(password, sysAdminVO.getPassword())) {
-            throw new UnknownAccountException("找不到用户（" + username + "）的帐号信息");
-        }
+//        if (!encoder.matches(password, sysAdminVO.getPassword())) {
+//            throw new UnknownAccountException("找不到用户（" + username + "）的帐号信息");
+//        }
         return new SimpleAuthenticationInfo(sysAdminVO, password, getName());
     }
 

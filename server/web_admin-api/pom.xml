@@ -15,9 +15,14 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.github.binarywang</groupId>
-            <artifactId>weixin-java-miniapp</artifactId>
+            <groupId>com.fei</groupId>
+            <artifactId>common_until</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.fei</groupId>
+            <artifactId>services</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
@@ -29,22 +34,6 @@
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring-boot-web-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fei</groupId>
-            <artifactId>common_until</artifactId>
-            <version>0.1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.fei</groupId>
-            <artifactId>services</artifactId>
-            <version>0.1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
         </dependency>
     </dependencies>
 

@@ -12,6 +12,21 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.fei</groupId>
+            <artifactId>module_system</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fei</groupId>
+            <artifactId>common_until</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fei</groupId>
+            <artifactId>services</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
@@ -19,12 +34,6 @@
         <dependency>
             <groupId>com.github.binarywang</groupId>
             <artifactId>weixin-java-pay</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>qrcode-utils</artifactId>
-                    <groupId>com.github.binarywang</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
@@ -39,45 +48,6 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>jakarta.validation</groupId>
-            <artifactId>jakarta.validation-api</artifactId>
-            <version>2.0.2</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.fei</groupId>
-            <artifactId>module_system</artifactId>
-            <version>0.1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.fei</groupId>
-            <artifactId>common_until</artifactId>
-            <version>0.1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fei</groupId>
-            <artifactId>services</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-spring-web</artifactId>
         </dependency>
     </dependencies>
 

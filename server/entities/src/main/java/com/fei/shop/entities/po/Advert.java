@@ -1,14 +1,11 @@
 package com.fei.shop.entities.po;
 
-import java.io.Serializable;
-import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
+import lombok.Data;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import lombok.Data;
-import org.hibernate.validator.constraints.NotEmpty;
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * admin_notice

@@ -21,6 +21,8 @@ import org.apache.commons.logging.LogFactory;
 import java.security.SecureRandom;
 import java.util.regex.Pattern;
 
+import com.fei.common_until.bcrypt.BCrypt;
+
 /**
  * Implementation of PasswordEncoder that uses the BCrypt strong hashing function. Clients
  * can optionally supply a "strength" (a.k.a. log rounds in BCrypt) and a SecureRandom
@@ -63,7 +65,7 @@ public class BCryptPasswordEncoder {
         String salt;
         if (strength > 0) {
             if (random != null) {
-                salt = BCrypt.gensalt(strength, random);
+                salt = com.fei.common_until.bcrypt.BCrypt.gensalt(strength, random);
             } else {
                 salt = BCrypt.gensalt(strength);
             }
