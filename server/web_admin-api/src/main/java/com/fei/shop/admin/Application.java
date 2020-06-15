@@ -6,7 +6,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-//@MapperScan("com.fei.shop.dao")
 @EnableTransactionManagement
 @EnableScheduling
 public class Application {

@@ -1,9 +1,10 @@
 package com.fei.common.storage;
 
-import com.fei.shop.mapper.SysStorageMapper;
+import com.fei.shop.entities.po.SysStorage;
+import com.fei.shop.mapper.SysStorageDao;
 import com.github.pagehelper.PageHelper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.apache.dubbo.config.annotation.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
 
@@ -13,33 +14,33 @@ import java.util.List;
 @Service
 public class SysStorageService {
     @Autowired
-    private SysStorageMapper storageMapper;
+    private SysStorageDao sysStorageDao;
 
     public void deleteByKey(String key) {
         Example example = new Example(SysStorage.class);
         example.createCriteria().andEqualTo("key", key);
-        storageMapper.deleteByExample(example);
+        sysStorageDao.deleteByExample(example);
     }
 
     public void add(SysStorage storageInfo) {
         storageInfo.setAddTime(new Date());
         storageInfo.setUpdateTime(new Date());
-        storageMapper.insertSelective(storageInfo);
+        sysStorageDao.insertSelective(storageInfo);
     }
 
     public SysStorage findByKey(String key) {
         Example example = new Example(SysStorage.class);
         example.createCriteria().andEqualTo("key", key).andEqualTo("deleted", false);
-        return storageMapper.selectOneByExample(example);
+        return sysStorageDao.selectOneByExample(example);
     }
 
     public int update(SysStorage storageInfo) {
         storageInfo.setUpdateTime(new Date());
-        return storageMapper.updateByPrimaryKeySelective(storageInfo);
+        return sysStorageDao.updateByPrimaryKeySelective(storageInfo);
     }
 
     public SysStorage findById(Integer id) {
-        return storageMapper.selectByPrimaryKey(id);
+        return sysStorageDao.selectByPrimaryKey(id);
     }
 
     public List<SysStorage> querySelective(String key, String name, Integer page, Integer limit, String sort, String order) {
@@ -59,6 +60,6 @@ public class SysStorageService {
         }
 
         PageHelper.startPage(page, limit);
-        return storageMapper.selectByExample(example);
+        return sysStorageDao.selectByExample(example);
     }
 }

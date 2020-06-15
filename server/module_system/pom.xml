@@ -14,14 +14,10 @@
         <dependency>
             <groupId>com.fei</groupId>
             <artifactId>repositories</artifactId>
-            <version>0.1.0</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.fei</groupId>
             <artifactId>services</artifactId>
-            <version>0.1.0</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Dubbo Spring Boot Starter -->
         <dependency>

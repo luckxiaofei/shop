@@ -1,5 +1,6 @@
 package com.fei.common.storage;
 
+import com.fei.shop.entities.po.SysStorage;
 import jodd.util.CharUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -47,11 +48,11 @@ public class StorageService {
 
         String url = generateUrl(key);
         SysStorage storageInfo = new SysStorage();
-        storageInfo.setName(fileName);
-        storageInfo.setSize((int) contentLength);
-        storageInfo.setType(contentType);
-        storageInfo.setKey(key);
-        storageInfo.setUrl(url);
+//        storageInfo.setName(fileName);
+//        storageInfo.setSize((int) contentLength);
+//        storageInfo.setType(contentType);
+//        storageInfo.setKey(key);
+//        storageInfo.setUrl(url);
         storageService.add(storageInfo);
 
         return storageInfo;
