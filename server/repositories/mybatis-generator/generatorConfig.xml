@@ -10,7 +10,6 @@
 
     <!-- MyBatis3Simple：不生成 Example相关类及方法 defaultModelType="flat" -->
     <context id="MysqlContext" targetRuntime="MyBatis3Simple">
-
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
 
@@ -18,16 +17,13 @@
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
         </plugin>
-
         <!--注意context内的文件要按序放-->
         <commentGenerator>
             <property name="suppressDate" value="true"/>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="false"/>
         </commentGenerator>
-
-
-        <!-- jdbc 连接配置 -->
+        <!-- jdbc 连接配置  spring.datasource.url-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://47.115.124.84:3306/info?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;verifyServerCertificate=false&amp;useSSL=false"
                         userId="root"
